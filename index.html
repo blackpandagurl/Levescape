@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEVESCAPE 💜</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div><p class="eyebrow">A tiny escape adventure</p><h1>LEVESCAPE <span>💜</span></h1></div>
+      <div class="stats"><span id="room-name">Wellness Room</span><strong id="key-counter">Keys: 0 / 6</strong></div>
+    </header>
+    <p id="message" class="message" aria-live="polite">Your safe space! Find the key and take a deep breath.</p>
+    <section id="game-board" class="room wellness" tabindex="0" aria-label="Game room">
+      <div id="room-items"></div>
+      <div id="cat-layer"></div>
+      <div id="player" aria-label="Your character">🧍🏽‍♀️</div>
+      
+<div id="escape-ending" hidden>
+    <div id="escape-ending-message">
+        You escaped... or did they let you escape? ☁️
+    </div>
+
+    <div class="escape-choices">
+        <button id="escape-free">
+            Yay, finally I'm free!
+        </button>
+
+        <button id="escape-stay">
+            Actually, I kinda liked it inside the house with Levi. 🐈‍⬛
+        </button>
+    </div>
+</div>
+
+      <div id="game-over-overlay" class="game-overlay" hidden>
+        <div class="overlay-card"><h2>Oh no! 💩</h2><p id="game-over-text"></p><button id="try-again" class="primary-button">Try Again 💜</button></div>
+      </div>
+    </section>
+    <nav class="mobile-controls" aria-label="Movement controls">
+      <button class="direction up" data-direction="up" aria-label="Move up">▲</button>
+      <button class="direction left" data-direction="left" aria-label="Move left">◀</button>
+      <button class="direction down" data-direction="down" aria-label="Move down">▼</button>
+      <button class="direction right" data-direction="right" aria-label="Move right">▶</button>
+    </nav>
+    <p class="instructions">Move with the arrow keys or WASD, hold the on-screen arrows, or tap a spot in the room. Click objects to play their challenges. Collect all 6 keys to escape!</p>
+  </main>
+
+  <div id="intro-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+    <div class="modal-card intro-card">
+      <div class="big-emoji">🐈‍⬛</div>
+      <h2 id="intro-title">Welcome to LEVESCAPE!</h2>
+      <p>Levi the cat is keeping you trapped inside. Find all <strong>6 keys</strong>, solve the room challenges, and escape through the front door.</p>
+      <p>The Wellness Room is your safe space because Levi cannot swim. But be careful in the other rooms… especially the Red Room!</p>
+      <p><strong>How to play:</strong> use the arrows or WASD to move, complete the challenges, and collect the keys. If Levi catches you, you’ll need to try again.</p>
+      <button id="start-game" class="primary-button">Understood, let's go! 💜</button>
+    </div>
+  </div>
+
+  <div id="challenge-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="challenge-title" hidden>
+    <div class="modal-card challenge-card">
+      <button id="close-challenge" class="close-button" aria-label="Close challenge">×</button>
+      <h2 id="challenge-title">Challenge</h2>
+      <p id="challenge-description"></p>
+      <div id="challenge-content"></div>
+      <p id="challenge-feedback" class="challenge-feedback" aria-live="polite"></p>
+    </div>
+  </div>
+  <script src="game.js"></script>
+ <audio id="game-music" src="music/♫ Saxophone_music.mp3" loop preload="auto"></audio> 
+ 
+<footer id="page-credits">
+    This game was created by Blackpandagurl.
+    Background music:
+    <a href="https://youtu.be/irGOUduTLdc" target="_blank" rel="noopener noreferrer">
+        “Saxophone/Travel/Romantic Music” by music4video, promoted by Audio Vons
+    </a>.
+</footer>
+
+</body>
+</html>
